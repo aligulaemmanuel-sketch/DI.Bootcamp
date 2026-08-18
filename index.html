@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RYSA Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="landing-screen" class="landing-screen">
+      <video autoplay muted loop class="landing-video">
+        <source src="https://media.w3.org/cc0-video/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+      </video>
+      
+      <nav class="landing-nav">
+        <div class="nav-brand">
+          <img src="RYSA logo.jpg" alt="RYSA Logo" class="brand-mark">
+          <h1>RYSA</h1>
+        </div>
+        <div class="nav-buttons">
+          <button class="nav-auth-button" id="nav-signin-btn">Sign in</button>
+          <button class="nav-auth-button primary" id="nav-signup-btn">Sign up</button>
+        </div>
+      </nav>
+
+      <div class="landing-content">
+        <div class="landing-hero">
+          <h1>Welcome to RYSA</h1>
+          <p class="landing-tagline">Sports • Education • Community • Youth Excellence</p>
+        </div>
+
+        <div class="landing-cards">
+          <div class="landing-card">
+            <h3>⚽ Sports Excellence</h3>
+            <p>Develop athletic talent and character through organized sports programs. Build teamwork, discipline, and healthy habits in youth across 4+ training hubs.</p>
+          </div>
+
+          <div class="landing-card">
+            <h3>🎓 Quality Education</h3>
+            <p>Provide accessible academic support and skill development to underserved youth. 210+ students enrolled with 79% attendance in education programs.</p>
+          </div>
+
+          <div class="landing-card">
+            <h3>🤝 Community Impact</h3>
+            <p>Foster community engagement and volunteer networks. Support youth in 12+ villages with mentorship, resources, and sustainable local solutions.</p>
+          </div>
+
+          <div class="landing-card">
+            <h3>💼 Youth Leadership</h3>
+            <p>Build the next generation of leaders through wellbeing support, psychology services, and comprehensive youth development programs.</p>
+          </div>
+        </div>
+
+        <div class="landing-cta">
+          <h2>Transform Youth Lives</h2>
+          <p>Join RYSA in building sports, education, and community excellence for 640+ active youth</p>
+          <button class="cta-button" id="landing-cta-btn">Get Started</button>
+        </div>
+
+        <footer class="landing-footer">
+          <div class="footer-content">
+            <div class="footer-section">
+              <h4>About RYSA</h4>
+              <p>Building youth excellence through integrated sports, education, community development, and psychosocial support programs serving 640+ active youth across 4 stations.</p>
+            </div>
+            <div class="footer-section">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><a href="#mission">Our Mission</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h4>Contact Us</h4>
+              <ul>
+                <li>📧 info@rysa.org</li>
+                <li>📱 +254 712 442 337</li>
+                <li>🌐 www.rysa.org</li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h4>Follow Us</h4>
+              <div class="social-links">
+                <a href="#" class="social-link">Facebook</a>
+                <a href="#" class="social-link">Twitter</a>
+                <a href="#" class="social-link">Instagram</a>
+                <a href="#" class="social-link">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2026 RYSA. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <div id="login-screen" class="auth-screen hidden">
+      <div class="auth-card">
+        <div class="auth-brand">
+          <img src="RYSA logo.jpg" alt="RYSA Logo" class="brand-mark">
+          <div>
+            <p class="eyebrow">Organization</p>
+            <h1>RYSA</h1>
+          </div>
+        </div>
+
+        <div class="auth-switch" aria-label="Authentication mode">
+          <button type="button" class="auth-tab active" data-auth-mode="signin">Sign in</button>
+          <button type="button" class="auth-tab" data-auth-mode="signup">Sign up</button>
+        </div>
+
+        <div id="signin-panel" class="auth-panel">
+          <h2>Sign in</h2>
+          <p class="auth-subtitle">Access the hub for your role in the network.</p>
+
+          <form id="login-form">
+            <label for="login-email">Email</label>
+            <input id="login-email" type="email" placeholder="you@example.com" required />
+
+            <label for="login-password">Password</label>
+            <input id="login-password" type="password" placeholder="Enter your password" required />
+
+            <label class="remember-member" for="remember-member">
+              <input id="remember-member" type="checkbox" />
+              <span>Remember this member</span>
+            </label>
+
+            <button type="submit" class="login-button">Enter dashboard</button>
+          </form>
+
+          <p style="text-align: center; margin-top: 12px;">
+            <button type="button" id="forgot-password-link" class="link-button">Forgot password?</button>
+          </p>
+
+          <div class="social-divider"><span>or continue with</span></div>
+          <div class="social-buttons">
+            <button type="button" class="social-button google" data-social-provider="Google" data-social-role="admin">
+              <span class="social-icon">G</span>
+              Google
+            </button>
+            <button type="button" class="social-button microsoft" data-social-provider="Microsoft" data-social-role="manager">
+              <span class="social-icon">M</span>
+              Microsoft
+            </button>
+            <button type="button" class="social-button apple" data-social-provider="Apple" data-social-role="coach">
+              <span class="social-icon"></span>
+              Apple
+            </button>
+          </div>
+        </div>
+
+        <div id="signup-panel" class="auth-panel hidden">
+          <h2>Create account</h2>
+          <p class="auth-subtitle">Set up a new RYSA account for your role.</p>
+
+          <form id="signup-form">
+            <label for="signup-name">Full name</label>
+            <input id="signup-name" type="text" placeholder="Enter your full name" required />
+
+            <label for="signup-email">Email</label>
+            <input id="signup-email" type="email" placeholder="you@example.com" required />
+
+            <label for="signup-role">Requested role</label>
+            <select id="signup-role">
+              <option value="admin">Admin</option>
+              <option value="investor">Investor</option>
+              <option value="manager">Manager</option>
+              <option value="coach">Coach</option>
+              <option value="fans">Community & Fans</option>
+            </select>
+
+            <label for="signup-lane">Requested lane</label>
+            <select id="signup-lane">
+              <option value="All">All / Org-wide</option>
+              <option value="Education">Education</option>
+              <option value="Sports">Sports</option>
+              <option value="Community">Community</option>
+              <option value="Psychology">Psychology</option>
+            </select>
+
+            <label for="signup-password">Password</label>
+            <input id="signup-password" type="password" placeholder="Create a password" required />
+
+            <button type="submit" class="login-button">Create account</button>
+          </form>
+        </div>
+
+        <div id="resetpw-panel" class="auth-panel hidden">
+          <h2>Reset password</h2>
+          <p class="auth-subtitle">Recover access to your account.</p>
+
+          <div id="resetpw-step1" class="reset-step">
+            <form id="resetpw-email-form">
+              <label for="resetpw-email">Email address</label>
+              <input id="resetpw-email" type="email" placeholder="your@email.com" required />
+              <button type="submit" class="login-button">Verify email</button>
+            </form>
+          </div>
+
+          <div id="resetpw-step2" class="reset-step hidden">
+            <p class="auth-subtitle" style="margin-bottom: 16px;">Enter your new password</p>
+            <form id="resetpw-form">
+              <input id="resetpw-new-password" type="password" placeholder="New password" required />
+              <input id="resetpw-confirm-password" type="password" placeholder="Confirm password" required />
+              <button type="submit" class="login-button">Reset password</button>
+            </form>
+          </div>
+
+          <p style="text-align: center; margin-top: 16px;">
+            <button type="button" id="back-to-signin-link" class="link-button">Back to sign in</button>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="app-shell" class="app-shell hidden">
+      <aside class="sidebar">
+        <div class="brand-block">
+          <img src="RYSA logo.jpg" alt="RYSA Logo" class="brand-mark">
+          <div>
+            <p class="eyebrow">Organization</p>
+            <h1>RYSA</h1>
+          </div>
+        </div>
+
+        <div class="section-nav" aria-label="Section navigation">
+          <button class="section-button active" data-section="dashboard">Dashboard</button>
+          <button class="section-button" data-section="group-notifications">Group notices</button>
+          <button class="section-button" data-section="group-gallery">Group gallery</button>
+          <button class="section-button" data-section="event-group">Event group</button>
+          <button class="section-button" data-section="public-notifications">Public notices</button>
+          <button class="section-button" data-section="drive-gallery">Photo gallery</button>
+          <button class="section-button" data-section="archives">Archives</button>
+          <button class="section-button" data-section="investors">Investors</button>
+          <button class="section-button" data-section="verification" id="verification-button" style="display: none;">
+            <span>Verification</span>
+            <span id="verification-badge" class="badge-dot" style="display: none;"></span>
+          </button>
+          <button class="section-button" data-section="group-approvals" id="group-approval-button" style="display: none;">Group approvals</button>
+        </div>
+
+        <nav class="role-nav" aria-label="Role navigation">
+          <button class="nav-button active" data-role="admin">Admin</button>
+          <button class="nav-button" data-role="investor">Investor</button>
+          <button class="nav-button" data-role="manager">Manager</button>
+          <button class="nav-button" data-role="coach">Coach</button>
+          <button class="nav-button" data-role="fans">Community & Fans</button>
+        </nav>
+
+        <div class="sidebar-card">
+          <p class="small-label">Live Overview</p>
+          <div class="mini-stat">
+            <span>Active youth</span>
+            <strong>640</strong>
+          </div>
+          <div class="mini-stat">
+            <span>Avg attendance</span>
+            <strong>82%</strong>
+          </div>
+        </div>
+
+        <button id="logout-button" class="logout-button">Log out</button>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Welcome back</p>
+            <h2 id="page-title">Admin Overview</h2>
+          </div>
+          <div class="user-badge">
+            <span class="user-dot"></span>
+            <span id="user-label">Org Admin</span>
+          </div>
+        </header>
+
+        <section id="dashboard-content" aria-live="polite"></section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
