@@ -12,9 +12,8 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-// Serve static files with proper configuration for Vercel
-const publicPath = process.env.VERCEL ? '.' : __dirname;
-app.use(express.static(publicPath, {
+// Serve static files
+app.use(express.static(__dirname, {
   maxAge: '1day',
   etag: false
 }));
@@ -71,9 +70,16 @@ app.post('/api/auth/login', async (req, res) => {
 });
 
 // SPA fallback - serve index.html for all other routes
-app.get('*', (req, res) => {
-  const indexPath = process.env.VERCEL ? 'index.html' : path.join(__dirname, 'index.html');
-  res.sendFile(indexPath);
+app.get('*', (req, res, next) => {
+  if (req.path.startsWith('/api/')) {
+    return next();
+  }
+  res.sendFile(path.join(__dirname, 'index.html'), (err) => {
+    if (err) {
+      console.error('Error sending index.html:', err);
+      res.status(500).send('Error loading page');
+    }
+  });
 });
 
 app.listen(port, () => console.log(`RYSA server running at http://localhost:${port}`));
