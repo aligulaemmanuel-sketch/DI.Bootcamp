@@ -11,7 +11,13 @@ const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname)));
+
+// Serve static files from current directory
+app.use(express.static('.', {
+  maxAge: '1d',
+  etag: false
+}));
+
 app.set('trust proxy', 1);
 
 const roleMap = {
@@ -63,6 +69,9 @@ app.post('/api/auth/login', async (req, res) => {
   }
 });
 
-app.use((req, res) => res.sendFile(path.join(__dirname, 'index.html')));
+// SPA fallback - serve index.html for all other routes
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve('index.html'));
+});
 
 app.listen(port, () => console.log(`RYSA server running at http://localhost:${port}`));
