@@ -11,9 +11,7 @@
   </head>
   <body>
     <div id="landing-screen" class="landing-screen">
-      <video autoplay muted loop class="landing-video">
-        <source src="https://media.w3.org/cc0-video/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
-      </video>
+      <div class="landing-backdrop" aria-hidden="true"></div>
       
       <nav class="landing-nav">
         <div class="nav-brand">
@@ -54,6 +52,30 @@
           </div>
         </div>
 
+        <section class="landing-photo-library" aria-labelledby="landing-photo-title">
+          <div class="landing-section-heading">
+            <div>
+              <p class="eyebrow">RYSA in action</p>
+              <h2 id="landing-photo-title">Community photo library</h2>
+            </div>
+            <a href="https://web.facebook.com/rysaproject/" target="_blank" rel="noopener" class="landing-photo-link">See more on Facebook</a>
+          </div>
+          <div class="landing-photo-grid">
+            <a href="https://web.facebook.com/photo/?fbid=1665588938940398&set=pcb.1665589258940366" target="_blank" rel="noopener" class="landing-photo-card">
+              <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80" alt="RYSA community activity" />
+              <span>Community moments</span>
+            </a>
+            <a href="https://web.facebook.com/photo/?fbid=1665588985607060&set=pcb.1665589258940366" target="_blank" rel="noopener" class="landing-photo-card">
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80" alt="RYSA wellbeing activity" />
+              <span>Wellbeing stories</span>
+            </a>
+            <a href="https://web.facebook.com/photo/?fbid=1674055934760365&set=pb.100064679227689.-2207520000" target="_blank" rel="noopener" class="landing-photo-card">
+              <img src="https://images.unsplash.com/photo-1547347298-4074fc3086f0?auto=format&fit=crop&w=900&q=80" alt="RYSA sports activity" />
+              <span>Sports stories</span>
+            </a>
+          </div>
+        </section>
+
         <div class="landing-cta">
           <h2>Transform Youth Lives</h2>
           <p>Join RYSA in building sports, education, and community excellence for 640+ active youth</p>
@@ -86,7 +108,7 @@
             <div class="footer-section">
               <h4>Follow Us</h4>
               <div class="social-links">
-                <a href="#" class="social-link">Facebook</a>
+                <a href="https://web.facebook.com/rysaproject/" target="_blank" rel="noopener" class="social-link">Facebook @rysaproject</a>
                 <a href="#" class="social-link">Twitter</a>
                 <a href="#" class="social-link">Instagram</a>
                 <a href="#" class="social-link">LinkedIn</a>
@@ -140,7 +162,7 @@
 
           <div class="social-divider"><span>or continue with</span></div>
           <div class="social-buttons">
-            <button type="button" class="social-button google" data-social-provider="Google" data-social-role="admin">
+            <button type="button" class="social-button google" data-social-provider="Google" data-social-role="fans">
               <span class="social-icon">G</span>
               Google
             </button>
@@ -157,7 +179,7 @@
 
         <div id="signup-panel" class="auth-panel hidden">
           <h2>Create account</h2>
-          <p class="auth-subtitle">Set up a new RYSA account for your role.</p>
+          <p class="auth-subtitle">Join the community instantly. Your role only unlocks the spaces you need.</p>
 
           <form id="signup-form">
             <label for="signup-name">Full name</label>
@@ -166,28 +188,27 @@
             <label for="signup-email">Email</label>
             <input id="signup-email" type="email" placeholder="you@example.com" required />
 
-            <label for="signup-role">Requested role</label>
+            <label for="signup-role">Your role</label>
             <select id="signup-role">
-              <option value="admin">Admin</option>
-              <option value="investor">Investor</option>
               <option value="manager">Manager</option>
               <option value="coach">Coach</option>
               <option value="fans">Community & Fans</option>
             </select>
 
-            <label for="signup-lane">Requested lane</label>
+            <label for="signup-lane">Your program space</label>
             <select id="signup-lane">
               <option value="All">All / Org-wide</option>
               <option value="Education">Education</option>
               <option value="Sports">Sports</option>
               <option value="Community">Community</option>
-              <option value="Psychology">Psychology</option>
+              <option value="Counseling">Counseling & wellbeing</option>
+              <option value="Events">Events & planning</option>
             </select>
 
             <label for="signup-password">Password</label>
             <input id="signup-password" type="password" placeholder="Create a password" required />
 
-            <button type="submit" class="login-button">Create account</button>
+            <button type="submit" class="login-button">Join RYSA</button>
           </form>
         </div>
 
@@ -231,12 +252,12 @@
 
         <div class="section-nav" aria-label="Section navigation">
           <button class="section-button active" data-section="dashboard">Dashboard</button>
-          <button class="section-button" data-section="group-notifications">Group notices</button>
+          <button class="section-button" data-section="group-notifications">Notices</button>
           <button class="section-button" data-section="group-gallery">Group gallery</button>
-          <button class="section-button" data-section="event-group">Event group</button>
-          <button class="section-button" data-section="public-notifications">Public notices</button>
-          <button class="section-button" data-section="drive-gallery">Photo gallery</button>
-          <button class="section-button" data-section="archives">Archives</button>
+          <button class="section-button" data-section="event-group">Events & planning</button>
+          <button class="section-button" data-section="public-notifications">Community board</button>
+          <button class="section-button" data-section="drive-gallery">Photo library</button>
+          <button class="section-button" data-section="archives">Resource library</button>
           <button class="section-button" data-section="investors">Investors</button>
           <button class="section-button" data-section="verification" id="verification-button" style="display: none;">
             <span>Verification</span>

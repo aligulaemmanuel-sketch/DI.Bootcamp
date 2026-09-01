@@ -1,0 +1,111 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum UserRole {
+  Admin
+  Investor
+  Manager
+  Coach
+  CommunityFans @map("Community & Fans")
+
+  @@map("user_role")
+}
+
+enum ApprovalStatus {
+  Pending
+  Approved
+  Rejected
+
+  @@map("approval_status")
+}
+
+model User {
+  userId         Int              @id @default(autoincrement()) @map("user_id")
+  fullName       String           @map("full_name") @db.VarChar(100)
+  email          String           @unique @db.VarChar(255)
+  passwordHash   String           @map("password_hash") @db.VarChar(255)
+  role           UserRole         @default(CommunityFans)
+  lane           String           @default("All") @db.VarChar(50)
+  isVerified     Boolean          @default(false) @map("is_verified")
+  createdAt      DateTime         @default(now()) @map("created_at") @db.Timestamptz
+  createdGroups  Group[]          @relation("GroupCreator")
+  approvals      GroupApproval[]
+  attendance     Attendance[]
+  notices        Notice[]
+  media          MediaGallery[]
+
+  @@map("users")
+}
+
+model Group {
+  groupId       Int             @id @default(autoincrement()) @map("group_id")
+  name          String          @db.VarChar(100)
+  description   String?
+  createdById   Int?            @map("created_by")
+  createdAt     DateTime        @default(now()) @map("created_at") @db.Timestamptz
+  createdBy     User?           @relation("GroupCreator", fields: [createdById], references: [userId], onDelete: SetNull)
+  approvals     GroupApproval[]
+  attendance    Attendance[]
+  notices       Notice[]
+  media         MediaGallery[]
+
+  @@map("groups")
+}
+
+model GroupApproval {
+  approvalId  Int            @id @default(autoincrement()) @map("approval_id")
+  groupId     Int            @map("group_id")
+  userId      Int            @map("user_id")
+  status      ApprovalStatus @default(Pending)
+  requestedAt DateTime       @default(now()) @map("requested_at") @db.Timestamptz
+  group       Group          @relation(fields: [groupId], references: [groupId], onDelete: Cascade)
+  user        User           @relation(fields: [userId], references: [userId], onDelete: Cascade)
+
+  @@map("group_approvals")
+}
+
+model Attendance {
+  attendanceId Int      @id @default(autoincrement()) @map("attendance_id")
+  userId       Int      @map("user_id")
+  groupId      Int      @map("group_id")
+  eventDate    DateTime @default(now()) @map("event_date") @db.Date
+  isPresent    Boolean  @default(false) @map("is_present")
+  user         User     @relation(fields: [userId], references: [userId], onDelete: Cascade)
+  group        Group    @relation(fields: [groupId], references: [groupId], onDelete: Cascade)
+
+  @@map("attendance")
+}
+
+model Notice {
+  noticeId  Int      @id @default(autoincrement()) @map("notice_id")
+  title     String   @db.VarChar(200)
+  content   String
+  isPublic  Boolean  @default(false) @map("is_public")
+  groupId   Int?     @map("group_id")
+  authorId  Int?     @map("author_id")
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz
+  group     Group?   @relation(fields: [groupId], references: [groupId], onDelete: Cascade)
+  author    User?    @relation(fields: [authorId], references: [userId], onDelete: SetNull)
+
+  @@map("notices")
+}
+
+model MediaGallery {
+  mediaId    Int      @id @default(autoincrement()) @map("media_id")
+  title      String?  @db.VarChar(150)
+  fileUrl    String   @map("file_url")
+  groupId    Int?     @map("group_id")
+  uploadedBy Int?     @map("uploaded_by")
+  uploadedAt DateTime @default(now()) @map("uploaded_at") @db.Timestamptz
+  group      Group?   @relation(fields: [groupId], references: [groupId], onDelete: Cascade)
+  uploader   User?    @relation(fields: [uploadedBy], references: [userId], onDelete: SetNull)
+
+  @@map("media_gallery")
+}

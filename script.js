@@ -55,6 +55,103 @@ const publicNotifications = [
   { title: 'Fundraiser drive', date: '2026-09-10', detail: 'A public fundraising campaign will help expand equipment, mentoring, and school-support programs.' }
 ];
 
+const communityLeagueTables = [
+  {
+    name: 'RYSA Senior • Kenya Division 2',
+    tone: 'senior',
+    teams: [
+      ['Huruma Lions', 12, 9, 2, 1, 29, 'W W D W W'], ['Kware United', 12, 8, 3, 1, 27, 'W D W W D'],
+      ['Kibera Stars', 12, 7, 2, 3, 23, 'W W L W D'], ['Mathare City', 12, 6, 3, 3, 21, 'D W W L W'],
+      ['Roysambu FC', 12, 6, 2, 4, 20, 'W L W D W'], ['Eastlands Rovers', 12, 5, 4, 3, 19, 'D W D W L'],
+      ['Kasarani Athletic', 12, 5, 3, 4, 18, 'L W W D L'], ['Embakasi United', 12, 5, 2, 5, 17, 'W L W L W'],
+      ['Dagoretti FC', 12, 4, 4, 4, 16, 'D D W L W'], ['Westlands City', 12, 4, 3, 5, 15, 'L W D L W'],
+      ['Starehe Warriors', 12, 4, 2, 6, 14, 'W L L W D'], ['Kilimani FC', 12, 3, 4, 5, 13, 'D L W D L'],
+      ['Ruaraka Stars', 12, 3, 3, 6, 12, 'L W L D L'], ['Dandora Youngsters', 12, 3, 2, 7, 11, 'W L L D L'],
+      ['Kangemi Rangers', 12, 2, 4, 6, 10, 'D L D W L'], ['Mukuru Allstars', 12, 2, 3, 7, 9, 'L D L W L'],
+      ['Githurai Town', 12, 2, 2, 8, 8, 'L W L L D'], ['Kawangware FC', 12, 1, 4, 7, 7, 'D L L D L'],
+      ['Kariobangi North', 12, 1, 3, 8, 6, 'L D L L W'], ['Korogocho Stars', 12, 1, 1, 10, 4, 'L L D L L']
+    ]
+  },
+  {
+    name: 'RYSA Youth • Nairobi County',
+    tone: 'youth',
+    teams: [
+      ['Kware Falcons', 12, 10, 1, 1, 31, 'W W W L W'], ['Huruma Academy', 12, 9, 2, 1, 29, 'W D W W W'],
+      ['Kibera Juniors', 12, 8, 1, 3, 25, 'W W L W W'], ['Mathare Future', 12, 7, 2, 3, 23, 'D W W W L'],
+      ['Nairobi Young Stars', 12, 7, 1, 4, 22, 'W L W W D'], ['Kasarani Youth', 12, 6, 2, 4, 20, 'W D L W W'],
+      ['Roysambu Juniors', 12, 6, 1, 5, 19, 'L W W D W'], ['Eastlands Youth', 12, 5, 3, 4, 18, 'D W W L D'],
+      ['Embakasi Rising', 12, 5, 2, 5, 17, 'W L D W L'], ['Dagoretti Young Lions', 12, 4, 4, 4, 16, 'D D W L W'],
+      ['Starehe Juniors', 12, 4, 3, 5, 15, 'L W D W L'], ['Westlands Youth', 12, 4, 2, 6, 14, 'W L L W D'],
+      ['Kilimani Future', 12, 3, 4, 5, 13, 'D L W D L'], ['Mukuru Juniors', 12, 3, 2, 7, 11, 'L W L L W'],
+      ['Dandora Youth', 12, 2, 4, 6, 10, 'D L D W L'], ['Kangemi Academy', 12, 2, 3, 7, 9, 'L D L W L'],
+      ['Kawangware Youth', 12, 2, 2, 8, 8, 'L W L L D'], ['Korogocho Juniors', 12, 1, 4, 7, 7, 'D L L D L'],
+      ['Mathare Rising', 12, 1, 2, 9, 5, 'L D L L W'], ['Kibera Future', 12, 0, 2, 10, 2, 'L L D L L']
+    ]
+  },
+  {
+    name: 'RYSA Starlets • Kenya Ladies Regionals',
+    tone: 'starlets',
+    teams: [
+      ['Huruma Starlets', 12, 10, 1, 1, 31, 'W W D W W'], ['Kware Queens', 12, 9, 2, 1, 29, 'W L W W W'],
+      ['Kibera Ladies', 12, 8, 1, 3, 25, 'L W W W D'], ['Mathare Roses', 12, 7, 2, 3, 23, 'W D W L W'],
+      ['Nairobi Queens', 12, 7, 1, 4, 22, 'W W L W D'], ['Eastlands Ladies', 12, 6, 2, 4, 20, 'D W W L W'],
+      ['Kasarani Starlets', 12, 6, 1, 5, 19, 'W L W D W'], ['Roysambu Ladies', 12, 5, 3, 4, 18, 'D D W W L'],
+      ['Embakasi Queens', 12, 5, 2, 5, 17, 'W L D W L'], ['Dagoretti Ladies', 12, 4, 4, 4, 16, 'L W D W D'],
+      ['Starehe Starlets', 12, 4, 3, 5, 15, 'W L L W D'], ['Westlands Ladies', 12, 4, 2, 6, 14, 'D L W L W'],
+      ['Kilimani Queens', 12, 3, 4, 5, 13, 'L D W D L'], ['Mukuru Ladies', 12, 3, 2, 7, 11, 'W L L D L'],
+      ['Dandora Starlets', 12, 2, 4, 6, 10, 'D L D W L'], ['Kangemi Ladies', 12, 2, 3, 7, 9, 'L W L D L'],
+      ['Kawangware Queens', 12, 2, 2, 8, 8, 'L D L W L'], ['Korogocho Ladies', 12, 1, 4, 7, 7, 'D L L D L'],
+      ['Mathare Starlets', 12, 1, 2, 9, 5, 'L W L L D'], ['Kibera Roses', 12, 0, 2, 10, 2, 'L L D L L']
+    ]
+  }
+];
+
+function getCommunityLeagueTables() {
+  const raw = localStorage.getItem(LEAGUE_TABLES_KEY);
+  return raw ? JSON.parse(raw) : communityLeagueTables;
+}
+
+function saveCommunityLeagueTables(tables) {
+  localStorage.setItem(LEAGUE_TABLES_KEY, JSON.stringify(tables));
+}
+
+function renderSportsTableEditor() {
+  const leagueTables = getCommunityLeagueTables();
+  return `
+    <div class="panel sports-table-editor" style="margin-top: 20px;">
+      <div class="panel-header">
+        <div><h3>Manage all RYSA tables</h3><p class="auth-subtitle">Update teams, results, points, and form for the Community board.</p></div>
+        <span class="pill">Sports manager</span>
+      </div>
+      <form id="sports-table-form">
+        <div class="sports-editors-grid">
+          ${leagueTables.map((league, leagueIndex) => `
+            <section class="sports-editor-section">
+              <h4>${league.name}</h4>
+              <div class="sports-editor-wrap">
+                <table class="league-table sports-editor-table">
+                  <thead><tr><th>#</th><th>Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>Pts</th><th>Form</th></tr></thead>
+                  <tbody>${league.teams.map((team, index) => `<tr>
+                    <td>${index + 1}</td>
+                    <td><input name="team" value="${team[0]}" required></td>
+                    <td><input name="played" type="number" min="0" value="${team[1]}" required></td>
+                    <td><input name="wins" type="number" min="0" value="${team[2]}" required></td>
+                    <td><input name="draws" type="number" min="0" value="${team[3]}" required></td>
+                    <td><input name="losses" type="number" min="0" value="${team[4]}" required></td>
+                    <td><input name="points" type="number" min="0" value="${team[5]}" required></td>
+                    <td><input name="form" value="${team[6]}" pattern="[WDL ]+" required></td>
+                  </tr>`).join('')}</tbody>
+                </table>
+              </div>
+            </section>
+          `).join('')}
+        </div>
+        <button type="submit" class="login-button">Save all three tables</button>
+      </form>
+    </div>
+  `;
+}
+
 const investorSecurity = {
   overview: {
     funded: 'KSh 18.4M',
@@ -83,7 +180,41 @@ const GROUP_PHOTOS_KEY = 'rysa-group-photos';
 const REPORTS_KEY = 'rysa-reports';
 const DRIVE_PHOTOS_KEY = 'rysa-drive-photos';
 const ARCHIVES_KEY = 'rysa-archives';
+const LEAGUE_TABLES_KEY = 'rysa-league-tables';
 const GROUP_NAMES = ['Education', 'Sports', 'Community', 'Psychology', 'Event Group'];
+
+const ROLE_SECTIONS = {
+  admin: ['dashboard', 'group-notifications', 'group-gallery', 'event-group', 'public-notifications', 'drive-gallery', 'archives', 'investors', 'verification', 'group-approvals'],
+  investor: ['dashboard', 'public-notifications', 'drive-gallery', 'archives', 'investors'],
+  manager: ['dashboard', 'group-notifications', 'group-gallery', 'event-group', 'public-notifications', 'drive-gallery', 'archives', 'group-approvals'],
+  coach: ['dashboard', 'group-notifications', 'group-gallery', 'public-notifications', 'drive-gallery'],
+  fans: ['dashboard', 'public-notifications', 'drive-gallery']
+};
+
+const managementAreas = [
+  ['Education', 'Learning hubs and mentors'],
+  ['Sports', 'Teams, training, and equipment'],
+  ['Counseling', 'Wellbeing and referrals'],
+  ['Events', 'Community calendar and gatherings'],
+  ['Planning', 'Goals, tasks, and timelines'],
+  ['Community', 'Outreach and local partners'],
+  ['Volunteers', 'People, shifts, and onboarding'],
+  ['Safeguarding', 'Youth safety and incident care'],
+  ['Communications', 'Stories, notices, and updates'],
+  ['Resources', 'Documents, photos, and supplies'],
+  ['Impact', 'Outcomes and attendance'],
+  ['Partnerships', 'Sponsors and collaboration']
+];
+
+function getVisibleSections() {
+  const role = appState.role;
+  const lane = appState.currentUser?.lane;
+  const sections = ROLE_SECTIONS[role] || ROLE_SECTIONS.fans;
+  if (role === 'admin' || role === 'investor' || !lane || lane === 'All') return sections;
+  if (lane === 'Events') return sections.filter((section) => ['dashboard', 'event-group', 'public-notifications', 'drive-gallery'].includes(section));
+  if (lane === 'Counseling') return sections.filter((section) => ['dashboard', 'group-notifications', 'group-gallery', 'public-notifications', 'drive-gallery'].includes(section));
+  return sections;
+}
 
 const landingScreen = document.getElementById('landing-screen');
 const loginScreen = document.getElementById('login-screen');
@@ -396,6 +527,15 @@ function renderAdmin() {
   return `
     ${renderStats(current.stats)}
     ${renderAlert(current.alert)}
+    <div class="panel program-directory" style="margin-top: 20px;">
+      <div class="panel-header">
+        <div><h3>Program management directory</h3><p class="auth-subtitle">One shared home for every part of the work.</p></div>
+        <span class="pill">12 workspaces</span>
+      </div>
+      <div class="management-grid">
+        ${managementAreas.map(([name, detail]) => `<button type="button" class="management-tile" data-management-area="${name}"><strong>${name}</strong><span>${detail}</span></button>`).join('')}
+      </div>
+    </div>
     <div class="two-col" style="margin-top: 20px;">
       <div class="panel">
         <div class="panel-header">
@@ -640,8 +780,9 @@ function renderAdmin() {
 
 function renderManager() {
   const current = data.manager;
-  const details = current.profiles[appState.managerStation];
+  const details = current.profiles[appState.managerStation] || current.profiles.Education;
   const canApprove = isUserApprover(appState.currentUser?.email);
+  const canManageSportsTable = appState.managerStation === 'Sports' && (appState.role === 'manager' || appState.role === 'admin');
   const pendingApprovals = canApprove ? getPendingApprovals() : [];
 
   const stationButtons = current.stations
@@ -675,6 +816,7 @@ function renderManager() {
 
     ${renderStats(details.stats)}
     ${renderAlert(details.alert)}
+    ${canManageSportsTable ? renderSportsTableEditor() : ''}
     <div class="two-col" style="margin-top: 20px;">
       <div class="chart-card">
         <div class="card-header">
@@ -1116,6 +1258,7 @@ function renderGroupNotifications() {
   const groups = Object.values(groupNotifications);
   const canManageEvents = isUserApprover(appState.currentUser?.email);
   const events = getGroupEvents();
+  const teamCounts = { Education: 210, Sports: 178, Community: 132, Psychology: 120 };
 
   return `
     ${
@@ -1142,45 +1285,31 @@ function renderGroupNotifications() {
         : ''
     }
 
+    <div class="panel team-notification-panel" style="margin-bottom: 20px;">
+      <div class="panel-header">
+        <div>
+          <h3>Team notification centre</h3>
+          <p class="auth-subtitle">See what each team is doing next at a glance.</p>
+        </div>
+        <span class="pill">${groups.length} active teams</span>
+      </div>
+      <div class="team-table-wrap">
+        <table class="team-table">
+          <thead><tr><th>Team</th><th>Focus</th><th>Next update</th><th>Youth</th><th>Status</th></tr></thead>
+          <tbody>
+            ${groups.map((group) => {
+              const customEvent = events.find((event) => event.group === group.title);
+              const nextItem = customEvent || group.items[0];
+              const title = customEvent ? customEvent.title : nextItem.action;
+              return `<tr><td><strong>${group.title.replace(' Group', '')}</strong></td><td>${group.header}</td><td><strong>${title}</strong><small>${nextItem.date}</small></td><td>${teamCounts[group.title] || '-'}</td><td><span class="team-status">On track</span></td></tr>`;
+            }).join('')}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
     <div class="notice-grid" style="margin-bottom: 20px;">
-      ${groups
-        .map(
-          (group) => `
-            <div class="notice-card">
-              <h4>${group.title}</h4>
-              <p style="margin-bottom: 12px; font-weight: 600; color: var(--blue-deep);">${group.header}</p>
-              <ul class="notice-list">
-                ${events
-                  .filter((event) => event.group === group.title)
-                  .map(
-                    (item) => `
-                      <li>
-                        <div>
-                          <strong>${item.title}</strong><br>
-                          <small>${item.note}</small>
-                        </div>
-                        <span class="notice-tag">${item.date}</span>
-                      </li>
-                    `
-                  )
-                  .join('') || group.items
-                        .map(
-                          (item) => `
-                            <li>
-                              <div>
-                                <strong>${item.action}</strong><br>
-                                <small>${item.note}</small>
-                              </div>
-                              <span class="notice-tag">${item.date}</span>
-                            </li>
-                          `
-                        )
-                        .join('')}
-              </ul>
-            </div>
-          `
-        )
-        .join('')}
+      ${groups.map((group) => `<div class="notice-card"><h4>${group.title}</h4><ul class="notice-list">${group.items.map((item) => `<li><div><strong>${item.action}</strong><br><small>${item.note}</small></div><span class="notice-tag">${item.date}</span></li>`).join('')}</ul></div>`).join('')}
     </div>
 
     <div class="timeline-box">
@@ -1204,6 +1333,8 @@ function renderGroupNotifications() {
 }
 
 function renderPublicNotifications() {
+  const leagueTables = getCommunityLeagueTables();
+  const plannedEvents = getGroupEvents().sort((first, second) => new Date(first.date) - new Date(second.date));
   return `
     <div class="panel" style="margin-bottom: 20px;">
       <div class="panel-header">
@@ -1224,6 +1355,48 @@ function renderPublicNotifications() {
             `
           )
           .join('')}
+      </div>
+    </div>
+
+    <div class="panel planned-events-board" style="margin-bottom: 20px;">
+      <div class="panel-header">
+        <div>
+          <h3>Planned events</h3>
+          <p class="auth-subtitle">Events published by the RYSA admin team.</p>
+        </div>
+        <span class="pill">${plannedEvents.length} scheduled</span>
+      </div>
+      <div class="planned-events-list">
+        ${plannedEvents.length ? plannedEvents.map((event) => `
+          <article class="planned-event-row">
+            <div class="event-date"><strong>${new Date(`${event.date}T00:00:00`).toLocaleDateString('en-GB', { day: '2-digit' })}</strong><span>${new Date(`${event.date}T00:00:00`).toLocaleDateString('en-GB', { month: 'short' })}</span></div>
+            <div><strong>${event.title}</strong><p>${event.note}</p></div>
+            <span class="notice-tag">${event.group.replace(' Group', '')}</span>
+          </article>
+        `).join('') : '<p class="auth-subtitle">No planned events have been published yet.</p>'}
+      </div>
+    </div>
+
+    <div class="league-board">
+      <div class="panel-header">
+        <div>
+          <h3>RYSA community league</h3>
+          <p class="auth-subtitle">EPL-style tables for our senior, youth, and ladies teams.</p>
+        </div>
+        <span class="pill">2026 season</span>
+      </div>
+      <div class="league-grid">
+        ${leagueTables.map((league) => `
+          <section class="league-card ${league.tone}">
+            <div class="league-card-heading"><h4>${league.name}</h4><span>Table</span></div>
+            <div class="league-table-wrap">
+              <table class="league-table">
+                <thead><tr><th>#</th><th>Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>Pts</th><th>Form</th></tr></thead>
+                <tbody>${league.teams.map((team, index) => `<tr><td>${index + 1}</td><td><strong>${team[0]}</strong></td><td>${team[1]}</td><td>${team[2]}</td><td>${team[3]}</td><td>${team[4]}</td><td><strong>${team[5]}</strong></td><td><span class="form-dots">${team[6].split(' ').map((result) => `<i class="form-${result.toLowerCase()}" title="${result}"></i>`).join('')}</span></td></tr>`).join('')}</tbody>
+              </table>
+            </div>
+          </section>
+        `).join('')}
       </div>
     </div>
   `;
@@ -1439,6 +1612,12 @@ const groupGalleryData = {
   }
 };
 
+const facebookPhotoSources = [
+  { title: 'RYSA community moment', group: 'Community', url: 'https://web.facebook.com/photo/?fbid=1665588938940398&set=pcb.1665589258940366' },
+  { title: 'RYSA wellbeing story', group: 'Counseling', url: 'https://web.facebook.com/photo/?fbid=1665588985607060&set=pcb.1665589258940366' },
+  { title: 'RYSA sports story', group: 'Sports', url: 'https://web.facebook.com/photo/?fbid=1674055934760365&set=pb.100064679227689.-2207520000' }
+];
+
 function renderGroupGallery() {
   const selectedGroup = appState.galleryGroup || 'Education';
   const canUploadImages = isUserApprover(appState.currentUser?.email);
@@ -1492,6 +1671,10 @@ function renderGroupGallery() {
                 <img src="${photo.image}" alt="${photo.title}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 12px;" />
                 <h4>${photo.title}</h4>
                 <p>${photo.date}</p>
+                <div class="photo-actions">
+                  <a href="${photo.image}" target="_blank" rel="noopener" class="link-button">View</a>
+                  <a href="${photo.image}" download="${photo.title.replace(/\s+/g, '-')}.jpg" class="login-button photo-download">Download photo</a>
+                </div>
               </div>
             `
           )
@@ -1567,7 +1750,8 @@ function renderEventGroupPage() {
                 <h4>${photo.title}</h4>
                 <p>${photo.date}</p>
                 <div style="margin-top: 12px;">
-                  <a href="${photo.image}" target="_blank" download="${photo.title.replace(/\s+/g, '-')}.jpg" class="login-button" style="display: inline-block; text-decoration: none;">Download photo</a>
+                  <a href="${photo.image}" target="_blank" rel="noopener" class="link-button">View</a>
+                  <a href="${photo.image}" download="${photo.title.replace(/\s+/g, '-')}.jpg" class="login-button photo-download">Download photo</a>
                 </div>
               </div>
             `
@@ -1580,30 +1764,51 @@ function renderEventGroupPage() {
 
 function renderPublicDriveGallery() {
   const photos = getDrivePhotos();
+  const featuredPhotos = Object.values(groupGalleryData).flatMap((group) => group.photos).slice(0, 8);
 
   return `
     <div class="panel">
       <div class="panel-header">
-        <h3>Photo Gallery</h3>
-        <span class="pill">From Google Drive</span>
+        <div>
+          <h3>RYSA Photo Library</h3>
+          <p class="auth-subtitle">Stories from learning, sport, wellbeing, and community action.</p>
+        </div>
+        <span class="pill">Community memories</span>
+      </div>
+
+      <div class="photo-library-grid">
+        ${featuredPhotos.map((photo) => `
+          <figure class="photo-library-card">
+            <img src="${photo.image}" alt="${photo.title}" loading="lazy" />
+            <figcaption><strong>${photo.title}</strong><span>${photo.date}</span></figcaption>
+          </figure>
+        `).join('')}
+      </div>
+
+      <div class="facebook-photo-sources">
+        <div class="panel-header">
+          <div><h4>More RYSA photos on Facebook</h4><p class="auth-subtitle">Open the original public posts from the RYSA Project page.</p></div>
+          <span class="pill">Source albums</span>
+        </div>
+        <div class="facebook-source-grid">
+          ${facebookPhotoSources.map((photo) => `<article class="facebook-source-card"><iframe src="https://www.facebook.com/plugins/post.php?href=${encodeURIComponent(photo.url)}&show_text=true" title="${photo.title}" loading="lazy"></iframe><strong>${photo.title}</strong><span>${photo.group}</span><a href="${photo.url}" target="_blank" rel="noopener">Open original post</a></article>`).join('')}
+        </div>
       </div>
 
       ${
         !photos.length
-          ? '<p class="auth-subtitle" style="margin-top: 12px;">No photos available yet.</p>'
+          ? ''
           : `
-            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px; margin-top: 16px;">
+            <div class="drive-photo-list">
+              <h4>Shared community albums</h4>
               ${photos
                 .map(
                   (photo) => `
-                    <div class="notice-card">
-                      <div style="background: linear-gradient(135deg, var(--blue) 0%, var(--yellow) 100%); width: 100%; height: 180px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; color: white; font-weight: 600; text-align: center; padding: 12px; box-sizing: border-box;">
-                        📸 ${photo.title}
-                      </div>
+                    <div class="drive-photo-item">
                       <h4>${photo.title}</h4>
                       <small style="color: var(--muted);">Group: ${photo.group}</small>
                       <div style="margin-top: 12px;">
-                        <a href="${photo.url}" target="_blank" class="login-button" style="display: inline-block; text-decoration: none;">View on Google Drive</a>
+                        <a href="${photo.url}" target="_blank" class="login-button" style="display: inline-block; text-decoration: none;">Open album</a>
                       </div>
                     </div>
                   `
@@ -1721,13 +1926,9 @@ function renderDashboard() {
   const isInvestorRestricted = appState.role !== 'admin' && appState.role !== 'investor';
   ensureAdminMemberships();
   
-  // Restrict investors section to admin and investor only
-  if (isInvestorRestricted && appState.currentSection === 'investors') {
-    appState.currentSection = 'dashboard';
-  }
-  
-  // Restrict fans to only 'dashboard' section
-  if (isFans && appState.currentSection !== 'dashboard' && appState.currentSection !== 'public-notifications' && appState.currentSection !== 'investors') {
+  const visibleSections = getVisibleSections();
+
+  if (!visibleSections.includes(appState.currentSection)) {
     appState.currentSection = 'dashboard';
   }
   
@@ -1749,12 +1950,9 @@ function renderDashboard() {
     groupApprovalButton.style.display = 'none';
   }
   
-  // Hide restricted sections for fans and investors section for non-investors
   document.querySelectorAll('.section-button').forEach((button) => {
     const section = button.dataset.section;
-    const isFansRestricted = isFans && ['group-notifications', 'group-gallery', 'event-group', 'verification', 'group-approvals'].includes(section);
-    const isInvestorsHidden = section === 'investors' && isInvestorRestricted;
-    button.style.display = (isFansRestricted || isInvestorsHidden) ? 'none' : 'block';
+    button.style.display = visibleSections.includes(section) ? 'block' : 'none';
     button.classList.toggle('active', section === appState.currentSection);
   });
 
@@ -1917,6 +2115,11 @@ function renderDashboard() {
     attachApprovalHandlers();
     attachDrivePhotoHandlers();
     attachArchiveHandlers();
+    document.querySelectorAll('[data-management-area]').forEach((button) => {
+      button.addEventListener('click', () => {
+        window.alert(`${button.dataset.managementArea} workspace selected. Use the related section in the sidebar to manage it.`);
+      });
+    });
     return;
   }
 
@@ -1934,6 +2137,24 @@ function renderDashboard() {
     const managerReportForm = document.getElementById('manager-report-form');
     if (managerReportForm) {
       managerReportForm.addEventListener('submit', handleManagerReport);
+    }
+    const sportsTableForm = document.getElementById('sports-table-form');
+    if (sportsTableForm) {
+      sportsTableForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const tables = getCommunityLeagueTables();
+        const editors = [...sportsTableForm.querySelectorAll('.sports-editor-section')];
+        tables.forEach((table, tableIndex) => {
+          const rows = [...editors[tableIndex].querySelectorAll('tbody tr')];
+          table.teams = rows.map((row) => {
+            const fields = Object.fromEntries([...row.querySelectorAll('input')].map((input) => [input.name, input.value.trim()]));
+            return [fields.team, Number(fields.played), Number(fields.wins), Number(fields.draws), Number(fields.losses), Number(fields.points), fields.form.toUpperCase()];
+          });
+        });
+        saveCommunityLeagueTables(tables);
+        window.alert('Sports table updated on the Community board.');
+        renderDashboard();
+      });
     }
     return;
   }
@@ -2167,6 +2388,18 @@ function attachArchiveHandlers() {
 }
 
 
+const API_URL = window.location.protocol === 'file:' ? 'http://localhost:3000' : '';
+
+async function apiRequest(endpoint, options = {}) {
+  const response = await fetch(`${API_URL}${endpoint}`, {
+    headers: { 'Content-Type': 'application/json' },
+    ...options
+  });
+  const body = await response.json();
+  if (!response.ok) throw new Error(body.error || 'Request failed.');
+  return body;
+}
+
 function getUsers() {
   const raw = localStorage.getItem(USERS_KEY);
   return raw ? JSON.parse(raw) : [];
@@ -2188,6 +2421,7 @@ function isUserApprover(userEmail) {
 function setUserLabel(name) {
   const labelMap = {
     admin: 'Org Admin',
+    investor: 'Sponsor',
     manager: 'Station Manager',
     coach: 'Team Coach',
     fans: 'Public View'
@@ -2232,7 +2466,7 @@ function restoreRememberedMember() {
     return;
   }
 
-  if (matchedUser.status === 'pending') {
+  if (matchedUser.status === 'pending' && !isUserApprover(matchedUser.email)) {
     clearRememberedMember();
     rememberMemberCheckbox.checked = false;
     window.alert('This saved member is waiting for admin verification before access is granted.');
@@ -2323,18 +2557,22 @@ function handleSocialLogin(provider, role) {
     role,
     lane: 'All',
     requestedRole: role,
-    status: 'pending',
+    status: 'approved',
     password: `${provider.toLowerCase()}-social-login`
   };
 
   users.push(newUser);
   saveUsers(users);
 
-  window.alert(`${provider} sign-in requested. Admin must approve your access before you can enter the dashboard.`);
-  setAuthMode('signin');
+  window.alert(`${provider} sign-in is ready. Welcome to RYSA!`);
+  appState.role = newUser.role;
+  appState.currentUser = newUser;
+  appState.loggedIn = true;
+  setUserLabel(newUser.name);
+  setViewState();
 }
 
-loginForm.addEventListener('submit', (event) => {
+loginForm.addEventListener('submit', async (event) => {
   event.preventDefault();
 
   const email = loginEmail.value.trim().toLowerCase();
@@ -2345,16 +2583,14 @@ loginForm.addEventListener('submit', (event) => {
     return;
   }
 
-  const users = getUsers();
-  const matchedUser = users.find((user) => user.email.toLowerCase() === email && user.password === password);
-
-  if (!matchedUser) {
-    window.alert('No account matches that email and password. Please sign up first.');
-    return;
-  }
-
-  if (matchedUser.status === 'pending') {
-    window.alert('This account is awaiting admin verification before access is granted.');
+  let matchedUser;
+  try {
+    ({ user: matchedUser } = await apiRequest('/api/auth/login', {
+      method: 'POST',
+      body: JSON.stringify({ email, password })
+    }));
+  } catch (error) {
+    window.alert(error.message);
     return;
   }
 
@@ -2372,7 +2608,7 @@ loginForm.addEventListener('submit', (event) => {
   setViewState();
 });
 
-signupForm.addEventListener('submit', (event) => {
+signupForm.addEventListener('submit', async (event) => {
   event.preventDefault();
 
   const name = signupName.value.trim();
@@ -2386,30 +2622,25 @@ signupForm.addEventListener('submit', (event) => {
     return;
   }
 
-  const users = getUsers();
-  const exists = users.some((user) => user.email.toLowerCase() === email);
-
-  if (exists) {
-    window.alert('An account with that email already exists. Please sign in instead.');
-    setAuthMode('signin');
+  let newUser;
+  try {
+    ({ user: newUser } = await apiRequest('/api/auth/signup', {
+      method: 'POST',
+      body: JSON.stringify({ name, email, password, role: requestedRole, lane })
+    }));
+  } catch (error) {
+    window.alert(error.message);
     return;
   }
 
-  users.push({
-    name,
-    email,
-    password,
-    role: 'pending',
-    requestedRole,
-    lane,
-    status: 'pending'
-  });
-
-  saveUsers(users);
-
-  window.alert('Your access request has been sent to the admin for verification.');
+  window.alert('Welcome to RYSA! Your community access is saved securely.');
   signupForm.reset();
-  setAuthMode('signin');
+  appState.role = newUser.role;
+  appState.currentUser = newUser;
+  appState.managerStation = lane !== 'All' ? lane : 'Education';
+  appState.loggedIn = true;
+  setUserLabel(name);
+  setViewState();
 });
 
 logoutButton.addEventListener('click', () => {
@@ -2527,8 +2758,13 @@ function autoLoginEmmanuel() {
       status: 'approved'
     };
     users.push(emmanuelUser);
-    saveUsers(users);
+  } else {
+    emmanuelUser.status = 'approved';
+    emmanuelUser.role = 'admin';
+    emmanuelUser.lane = 'All';
   }
+
+  saveUsers(users);
   
   // Auto-login Emmanuel
   appState.role = emmanuelUser.role;
@@ -2572,19 +2808,10 @@ document.querySelectorAll('.nav-button').forEach((button) => {
 // Section navigation (Dashboard vs Verification)
 document.querySelectorAll('.section-button').forEach((button) => {
   button.addEventListener('click', () => {
-    const isFans = appState.role === 'fans';
-    const isInvestorRestricted = appState.role !== 'admin' && appState.role !== 'investor';
     const section = button.dataset.section;
-    
-    // Restrict investors section to admin and investor only
-    if (isInvestorRestricted && section === 'investors') {
-      window.alert('Investor access is restricted to admin and investor users only.');
-      return;
-    }
-    
-    // Restrict fans from accessing admin-only sections
-    if (isFans && ['group-notifications', 'group-gallery', 'event-group', 'verification', 'group-approvals'].includes(section)) {
-      window.alert('This section is not available for Community & Fans users.');
+
+    if (!getVisibleSections().includes(section)) {
+      window.alert('This space is not part of your current program access.');
       return;
     }
     
