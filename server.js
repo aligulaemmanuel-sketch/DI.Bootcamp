@@ -1,4 +1,5 @@
 require('dotenv').config();
+const fs = require('fs');
 const path = require('path');
 const express = require('express');
 const cors = require('cors');
@@ -11,13 +12,6 @@ const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
-
-// Serve static files
-app.use(express.static(__dirname, {
-  maxAge: '1day',
-  etag: false
-}));
-
 app.set('trust proxy', 1);
 
 const roleMap = {
@@ -69,17 +63,17 @@ app.post('/api/auth/login', async (req, res) => {
   }
 });
 
-// SPA fallback - serve index.html for all other routes
-app.get('*', (req, res, next) => {
-  if (req.path.startsWith('/api/')) {
-    return next();
+// SPA fallback - serve index.html for all other routes (except API)
+app.get('*', (req, res) => {
+  try {
+    const indexPath = path.join(__dirname, 'index.html');
+    const indexContent = fs.readFileSync(indexPath, 'utf8');
+    res.setHeader('Content-Type', 'text/html');
+    res.send(indexContent);
+  } catch (err) {
+    console.error('Error serving index.html:', err);
+    res.status(500).json({ error: 'Unable to load application' });
   }
-  res.sendFile(path.join(__dirname, 'index.html'), (err) => {
-    if (err) {
-      console.error('Error sending index.html:', err);
-      res.status(500).send('Error loading page');
-    }
-  });
 });
 
 app.listen(port, () => console.log(`RYSA server running at http://localhost:${port}`));
