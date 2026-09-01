@@ -66,13 +66,35 @@ app.post('/api/auth/login', async (req, res) => {
 // SPA fallback - serve index.html for all other routes (except API)
 app.get('*', (req, res) => {
   try {
-    const indexPath = path.join(__dirname, 'index.html');
-    const indexContent = fs.readFileSync(indexPath, 'utf8');
+    const possiblePaths = [
+      path.join(process.cwd(), 'index.html'),
+      path.join(__dirname, 'index.html'),
+      path.join(__dirname, '..', 'index.html'),
+      'index.html'
+    ];
+    
+    let indexContent = null;
+    for (const filePath of possiblePaths) {
+      try {
+        if (fs.existsSync(filePath)) {
+          indexContent = fs.readFileSync(filePath, 'utf8');
+          console.log(`Loaded index.html from: ${filePath}`);
+          break;
+        }
+      } catch (e) {
+        // Try next path
+      }
+    }
+    
+    if (!indexContent) {
+      throw new Error('Could not find index.html in any expected path');
+    }
+    
     res.setHeader('Content-Type', 'text/html');
     res.send(indexContent);
   } catch (err) {
     console.error('Error serving index.html:', err);
-    res.status(500).json({ error: 'Unable to load application' });
+    res.status(500).json({ error: 'Unable to load application', details: err.message });
   }
 });
 
