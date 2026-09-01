@@ -11,7 +11,8 @@ const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname)));
+app.set('trust proxy', 1);
 
 const roleMap = {
   admin: 'Admin',
